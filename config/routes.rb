@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :flights
+  resources :airplanes
   root :to => 'session#new'
 
   get '/login' => 'session#new'
