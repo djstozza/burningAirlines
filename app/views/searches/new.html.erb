@@ -1,0 +1,11 @@
+<h1>New Search</h1>
+
+<%= form_tag searches_result_path, :method => 'get' do %>
+	<%= label_tag :origin, 'Depart' %>
+	<%= select_tag :origin, options_for_select(Flight.all.map{|flight| [flight.origin, flight.origin]}), :include_blank => true, :id => 'origin' %>
+
+	<%= label_tag :destination, 'Arrive' %>
+	<%= select_tag :destination, options_for_select(Flight.all.map{|flight| [flight.destination, flight.destination]}), :include_blank => true, :id => 'destination' %>
+
+	<%= submit_tag "Search", :name => nil, :class => 'btn btn-default' %>
+<% end %>

@@ -14,5 +14,4 @@
 //= require jquery_ujs
 //= require underscore
 //= require backbone
-//= require jquery.seat-charts.js
 //= require_tree .

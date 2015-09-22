@@ -1,0 +1,12 @@
+<h1>Results</h1>
+
+<% unless @flights.empty? %>
+  <% @flights.each do |flight| %>
+      <p><strong><%= flight.flight_number%></strong></p>
+       <p><%=flight.origin%></p>
+       <p><%=flight.destination%></p>
+       <p><%=flight.date%></p>
+   <% end %>
+<% else  %>
+   <h3>No results found please try again</h3>
+<% end %>

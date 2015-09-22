@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'searches/new'
+
+  get 'searches/result'
+
   resources :reservations
   resources :flights
   resources :airplanes
