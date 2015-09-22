@@ -8,9 +8,20 @@
 </head>
 <body>
 
+<% if @current_user.present? && @admin.present? %>
 <%= link_to 'New Airplane', new_airplane_path %>
+<% end %>
 
-<%= yield %>
+<% if @current_user.present? %>
+<a href="<%= user_path(@current_user) %>"><%= @current_user.name %></a>
+<a href="<%= new_reservation_path %>">Book a flight</a>
+<% end %>
+
+
+<div class="container">
+	<%= yield %>
+</div>
+
 
 </body>
 </html>

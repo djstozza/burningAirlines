@@ -10,15 +10,15 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
-    <%= f.label :flight_id %><br>
-    <%= f.number_field :flight_id %>
+    <%= f.label :flight_id, 'Flight Number' %>
+    <%= f.select :flight_id, Flight.all.map{
+      |flight| ["#{flight.flight_number}", flight.id]
+      }, :include_blank => true %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
-  </div>
+  
+  
   <div class="field">
     <%= f.label :row %><br>
     <%= f.number_field :row %>

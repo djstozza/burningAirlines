@@ -17,12 +17,12 @@
 
 <p>
   <strong>Airplane:</strong>
-  <%= @flight.airplane_id %>
+  <%= @flight.airplane.name %>
 </p>
 
 <p>
   <strong>Date:</strong>
-  <%= @flight.date %>
+  <%= @flight.date.in_time_zone %>
 </p>
 
 <%= link_to 'Edit', edit_flight_path(@flight) %> |

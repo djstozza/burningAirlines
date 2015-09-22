@@ -2,23 +2,18 @@
 
 <p>
   <strong>Flight:</strong>
-  <%= @reservation.flight_id %>
+  <%= @reservation.flight.flight_number %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @reservation.user_id %>
+  <%= @reservation.user.name + " " + @reservation.user.surname %>
 </p>
 
 <p>
-  <strong>Row:</strong>
-  <%= @reservation.row %>
+  Seat: <%= @reservation.row %><%= @reservation.column %>
 </p>
 
-<p>
-  <strong>Column:</strong>
-  <%= @reservation.column %>
-</p>
 
 <%= link_to 'Edit', edit_reservation_path(@reservation) %> |
 <%= link_to 'Back', reservations_path %>
