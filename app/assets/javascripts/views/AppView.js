@@ -4,7 +4,28 @@ app.AppView = Backbone.View.extend({
 	
 	el: '#show',
 
+
+     events: {
+    'click': 'chooseSeat',
+
+  },
+
+  chooseSeat: function (seat) {
+  	var seatID  = seat.target.id
+  	  seatID  = '#' + seatID 
+
+  
+  	console.log(seat.target.id)
+
+  	    $(seatID).removeClass('box')
+  		$(seatID).addClass('seatTaken'); 
+     
+  },
+
 	render: function () {
+
+
+
 		var appViewTemplate = $('#appViewTemplate').html();
 		var appViewHTML = _.template(appViewTemplate);
 
@@ -20,6 +41,7 @@ app.AppView = Backbone.View.extend({
 
 		var seats = parseInt(data.rows) * parseInt(data.cols)
 
+ 
 
 
    for (var i = 0 ; i < data.rows ; i++) {
