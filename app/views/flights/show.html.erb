@@ -25,5 +25,16 @@
   <%= @flight.date.in_time_zone %>
 </p>
 
-<%= link_to 'Edit', edit_flight_path(@flight) %> |
+<div id="show"></div>
+
+<script id="appViewTemplate" type="template/underscore">
+  <h1>dnscklandvl</h1>
+</script>
+
+<script id="flightInputViewTemplate" type="template/underscore">
+</script>
+
+<%= javascript_include_tag 'application' %>
+
+<%= link_to 'Edit', edit_flight_path(@flight) %>
 

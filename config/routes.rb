@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get 'searches/result'
 
+
   resources :reservations
   resources :flights
   resources :airplanes
