@@ -27,6 +27,7 @@ background-color: red;
 display: inline-block;
 }
 
+
 .seatTaken {
 padding: 5px;
 width: 50px; 
@@ -37,4 +38,9 @@ display: inline-block;
 
 }
 
+
+
+.box:hover {
+	background-color:blue;
+}
 
