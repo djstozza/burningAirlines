@@ -11,8 +11,16 @@ app.AppView = Backbone.View.extend({
   },
 
   chooseSeat: function (seat) {
+  	// console.log('the row is ' + seat.target.id.match(/(\d+)/)[0]);
+  	// console.log('the column is ' + seat.target.id.match(/[0-9]$/)[0]);
+
   	var seatID  = seat.target.id
   	  seatID  = '#' + seatID 
+     var rowSelected = seat.target.id.match(/(\d+)/)[0]
+     var columnSelected = parseInt(seat.target.id.match(/[\d]$/)[0])
+         console.log("row is " + rowSelected )
+         console.log("column is " + columnSelected )
+
 
   
   	console.log(seat.target.id)
@@ -20,6 +28,17 @@ app.AppView = Backbone.View.extend({
   	    $(seatID).removeClass('box')
   		$(seatID).addClass('seatTaken'); 
      
+     var res = new app.Reservation({
+     	row: rowSelected,
+     	column: columnSelected,
+     	user_id: parseInt($('h6').html()),
+     	flight_id: app.flight_id
+     });
+
+     console.log(res);
+
+     res.save();
+         
   },
 
 	render: function () {
@@ -44,9 +63,9 @@ app.AppView = Backbone.View.extend({
  
 
 
-   for (var i = 0 ; i < data.rows ; i++) {
+   for (var i = 1 ; i <= data.rows ; i++) {
    	$('<div/>').addClass(i.toString()).appendTo('.seatplan');
-   	for (var j = 0 ; j < data.cols ; j++) {
+   	for (var j = 1 ; j <= data.cols ; j++) {
    		$('<div/>').addClass('box').attr('id', i.toString() + "_" + j.toString() ).appendTo('.' + i.toString());
    	}
    }

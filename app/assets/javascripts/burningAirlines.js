@@ -10,12 +10,16 @@ $(document).ready(function() {
 	
 	app.flights = new app.Flights();
 	app.airplanes = new app.Airplanes();
+	app.reservations = new app.Reservations();
 
 	app.airplanes.fetch().done(function() {
 		app.flights.fetch().done(function () {
+			app.reservations.fetch().done(function () {
 
 			app.router = new app.AppRouter();
 			Backbone.history.start();
+
+			});
 
 		});
 	});

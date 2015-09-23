@@ -32,12 +32,15 @@
 <script id="appViewTemplate" type="template/underscore">
   <p>Rows: {{ rows }}</p>
   <p>Columns: {{ cols }}</p>
-  <div class="seatplan"></div> 
+  <p>flight id: {{ app.flight_id }}
+ <div class="seatplan"></div> 
 </script>
+
 
 <script id="flightInputViewTemplate" type="template/underscore">
 </script>
 
+<h6><%= @current_user.id %></h6>  
 
 
 <%= javascript_include_tag 'application' %>
