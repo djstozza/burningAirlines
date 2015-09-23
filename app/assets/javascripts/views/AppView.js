@@ -18,9 +18,17 @@ app.AppView = Backbone.View.extend({
 
 		this.$el.append( toAppend );
 
+		var seats = parseInt(data.rows) * parseInt(data.cols)
 
 
-		// Figure out a loop to draw all of the seats
-	}
-	
-});
+
+   for (var i = 0 ; i < data.rows ; i++) {
+   	$('<div/>').addClass(i.toString()).appendTo('.seatplan');
+   	for (var j = 0 ; j < data.cols ; j++) {
+   		$('<div/>').addClass('box').attr('id', i.toString() + "_" + j.toString() ).appendTo('.' + i.toString());
+   	}
+   }
+ }
+
+}) 
+

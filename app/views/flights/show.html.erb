@@ -25,18 +25,20 @@
   <%= @flight.date.in_time_zone %>
 </p>
 
-<div id="show"></div>
+<div id="show">
+  
+</div>
 
 <script id="appViewTemplate" type="template/underscore">
-  <h1>Flight {{ id }}</h1>
-  <p>{{ origin }} -> {{ destination }}</p>
-  <p>On plane {{ airplane_id }}</p>
   <p>Rows: {{ rows }}</p>
   <p>Columns: {{ cols }}</p>
+  <div class="seatplan"></div> 
 </script>
 
 <script id="flightInputViewTemplate" type="template/underscore">
 </script>
+
+
 
 <%= javascript_include_tag 'application' %>
 
