@@ -2,7 +2,7 @@ var app = app || {};
 
 app.AppRouter = Backbone.Router.extend({
 	routes: {
-		'': 'show'
+		'': 'show',
 	},
 
 	show: function () {
@@ -12,8 +12,11 @@ app.AppRouter = Backbone.Router.extend({
 		// Pass that collection into an instance of AppView
 		// Then call render
 
-		var appView = new app.AppView({ collection: app.flights })
+		//var appView = new app.AppView({ collection: app.flights })
+		var appView = new app.AppView({ model: app.flights.get(app.flight_id) })
 		// console.log('are you working???');
 		appView.render();
-	}
+	},
+
+
 });

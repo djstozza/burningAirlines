@@ -28,7 +28,11 @@
 <div id="show"></div>
 
 <script id="appViewTemplate" type="template/underscore">
-  <h1>dnscklandvl</h1>
+  <h1>Flight {{ id }}</h1>
+  <p>{{ origin }} -> {{ destination }}</p>
+  <p>On plane {{ airplane_id }}</p>
+  <p>Rows: {{ rows }}</p>
+  <p>Columns: {{ cols }}</p>
 </script>
 
 <script id="flightInputViewTemplate" type="template/underscore">

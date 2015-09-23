@@ -9,8 +9,14 @@ $(document).ready(function() {
 	console.log('sonofa...')
 	
 	app.flights = new app.Flights();
-	app.flights.fetch().done(function () {
-		app.router = new app.AppRouter();
-		Backbone.history.start();
+	app.airplanes = new app.Airplanes();
+
+	app.airplanes.fetch().done(function() {
+		app.flights.fetch().done(function () {
+
+			app.router = new app.AppRouter();
+			Backbone.history.start();
+
+		});
 	});
 })
