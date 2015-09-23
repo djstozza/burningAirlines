@@ -1,0 +1,12 @@
+
+<%= form_tag searches_result_path, :method => 'get' do %>
+
+    <%= text_field_tag :origin, params[:origin]  %>
+
+    <%= text_field_tag :destination, params[:destination]  %>
+
+    <%= submit_tag "Search", :origin => nil, :destination => nil %>
+
+    <% end %> 
+
+
