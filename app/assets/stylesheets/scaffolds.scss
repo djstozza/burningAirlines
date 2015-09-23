@@ -6,6 +6,12 @@ body {
   line-height: 18px;
 }
 
+nav {
+  background-color: white;
+
+
+}
+
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -19,10 +25,12 @@ pre {
 }
 
 a {
-  color: #000;
+  color: black;
+  font-weight:bold;
 
   &:visited {
-    color: #666;
+    color:black;
+    font-weight:bold;
   }
 
   &:hover {
