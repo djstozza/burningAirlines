@@ -23,4 +23,10 @@ $(document).ready(function() {
 
 		});
 	});
+
+	setInterval(function () {
+		var a = new app.AppView()
+		a.ajaxReservation(app.flight_id);
+	}, 1000);
+	
 })

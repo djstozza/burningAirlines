@@ -10,9 +10,16 @@ app.AppView = Backbone.View.extend({
 
   },
 
+  initialize: function () {
+    
+
+    this.ajaxReservation(app.flight_id);
+  },
+
   chooseSeat: function (seat) {
   	// console.log('the row is ' + seat.target.id.match(/(\d+)/)[0]);
   	// console.log('the column is ' + seat.target.id.match(/[0-9]$/)[0]);
+    
 
   	var seatID  = seat.target.id
   	  seatID  = '#' + seatID 
@@ -23,9 +30,10 @@ app.AppView = Backbone.View.extend({
 
 
   
-  	console.log(seat.target.id)
+  	console.log(seat.target.id);
+    this.ajaxReservation(app.flight_id);
 
-  	    $(seatID).removeClass('box')
+  	    $(seatID).removeClass('box');
   		$(seatID).addClass('seatTaken'); 
      
      var res = new app.Reservation({
@@ -39,6 +47,34 @@ app.AppView = Backbone.View.extend({
 
      res.save();
          
+  },
+
+  ajaxReservation: function (flight_id) {
+    var url = '/reservations.json';
+    var reservations = [];
+
+    $.ajax({
+        type     : 'get',
+        url      : url,
+        dataType : 'json',
+        success  : function(response) {
+            //iterate through all bookings for our event
+            //console.log('AJAX CALL', response);
+            reservations = response
+            for (var i = 0; i < reservations.length; i++) {
+              if ( reservations[i].flight_id === flight_id ) {
+                var seatId = '#' + reservations[i].row + '_' + reservations[i].column;
+                $(seatId).addClass('seatTaken')//.text('taken');
+
+              }
+
+            }
+
+
+        }
+    });
+
+
   },
 
 	render: function () {
