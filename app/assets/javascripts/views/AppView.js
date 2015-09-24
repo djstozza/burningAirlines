@@ -102,7 +102,7 @@ app.AppView = Backbone.View.extend({
    for (var i = 1 ; i <= data.rows ; i++) {
    	$('<div/>').addClass(i.toString()).appendTo('.seatplan');
    	for (var j = 1 ; j <= data.cols ; j++) {
-   		$('<div/>').addClass('box').attr('id', i.toString() + "_" + j.toString() ).appendTo('.' + i.toString());
+   		$('<div/>').addClass('box').attr('id', i.toString() + "_" + j.toString() ).appendTo('.' + i.toString()).text('');
    	}
    }
  }

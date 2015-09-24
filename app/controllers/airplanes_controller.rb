@@ -1,6 +1,6 @@
 class AirplanesController < ApplicationController
   before_action :set_airplane, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /airplanes
   # GET /airplanes.json
   def index
@@ -71,4 +71,6 @@ class AirplanesController < ApplicationController
     def airplane_params
       params.require(:airplane).permit(:name, :rows, :columns)
     end
+
+    
 end
